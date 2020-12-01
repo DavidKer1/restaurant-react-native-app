@@ -22,7 +22,7 @@ import FirebaseContext from '../context/firebase/firebaseContext';
 import ButtonOrdenar from '../components/ResumenPedido/ButtonOrdenar';
 
 export default function ResumenPedido() {
-  const {pedido, total, mostrarResumen, eliminarProducto,pedidoOrdenado} = useContext(PedidoContext);
+  const {pedido, total, mostrarResumen, eliminarProducto} = useContext(PedidoContext);
   const navigation = useNavigation();
   useEffect(() => {
     calcularTotal();
@@ -36,7 +36,7 @@ export default function ResumenPedido() {
     mostrarResumen(nuevoTotal);
   };
 
- 
+  
   const  confirmarEliminacion = ({id, nombre}) => {
     Alert.alert('¿Deseas eliminar este articulo?',nombre, [
       {
