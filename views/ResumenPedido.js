@@ -19,10 +19,10 @@ import globalStyles from '../styles/global';
 import {Alert, StyleSheet} from 'react-native';
 import PedidoContext from '../context/pedidos/pedidosContext';
 import FirebaseContext from '../context/firebase/firebaseContext';
+import ButtonOrdenar from '../components/ResumenPedido/ButtonOrdenar';
 
 export default function ResumenPedido() {
   const {pedido, total, mostrarResumen, eliminarProducto,pedidoOrdenado} = useContext(PedidoContext);
-  const {firebase} = useContext(FirebaseContext)
   const navigation = useNavigation();
   useEffect(() => {
     calcularTotal();
@@ -36,37 +36,7 @@ export default function ResumenPedido() {
     mostrarResumen(nuevoTotal);
   };
 
-  const progresoPedido = () => {
-    Alert.alert('¿Listo para ordenar?','Una vez realices tu pedido, no podrás cambiarlo', [
-      {
-        text: 'Confirmar',
-        onPress: async  () => {
-          const pedidoObj = {
-            tiempoentrega: 0,
-            completado: false,
-            total: Number(total),
-            orden: pedido,
-            creado: Date.now()
-          }
-          console.log(pedidoObj);
-
-          try {
-            const pedido = await firebase.db.collection('ordenes').add(pedidoObj)
-            pedidoOrdenado(pedido.id)
-            navigation.navigate('ProgresoPedido')
-
-          } catch (error) {
-            console.log(error);
-          }
-          
-        }
-      },
-      {
-        text: 'Seguir Pidiendo',
-        style: 'cancel'
-      }
-    ] )
-  }
+ 
   const  confirmarEliminacion = ({id, nombre}) => {
     Alert.alert('¿Deseas eliminar este articulo?',nombre, [
       {
@@ -121,14 +91,7 @@ export default function ResumenPedido() {
       </Content>
       <Footer>
         <FooterTab>
-          <Button
-            onPress={() => progresoPedido()}
-            style={[globalStyles.boton]}
-            full
-            >
-            <Text style={globalStyles.botonTexto}>Ordenar Pedidosadasdasdsa</Text>
-            
-          </Button>
+          <ButtonOrdenar />
         </FooterTab>
       </Footer>
 
