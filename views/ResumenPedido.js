@@ -126,7 +126,8 @@ export default function ResumenPedido() {
             style={[globalStyles.boton]}
             full
             >
-            <Text style={globalStyles.botonTexto}>Ordenar Pedido</Text>
+            <Text style={globalStyles.botonTexto}>Ordenar Pedidosadasdasdsa</Text>
+            
           </Button>
         </FooterTab>
       </Footer>
