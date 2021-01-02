@@ -16,9 +16,8 @@ import {
   View,
 } from 'native-base';
 import globalStyles from '../styles/global';
-import {Alert, StyleSheet} from 'react-native';
+import {Alert} from 'react-native';
 import PedidoContext from '../context/pedidos/pedidosContext';
-import FirebaseContext from '../context/firebase/firebaseContext';
 import ButtonOrdenar from '../components/ResumenPedido/ButtonOrdenar';
 
 export default function ResumenPedido() {

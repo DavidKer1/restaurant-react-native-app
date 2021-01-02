@@ -26,6 +26,7 @@ export default function ButtonOrdenar() {
             total: Number(total),
             orden: pedido,
             creado: Date.now()
+          
           }
           console.log(pedidoObj);
 
@@ -38,7 +39,10 @@ export default function ButtonOrdenar() {
             console.log(error);
           }
           
+          {
         }
+        },
+        
       },
       {
         text: 'Seguir Pidiendo',
