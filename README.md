@@ -29,7 +29,7 @@ npm run ios
 <img src="https://raw.githubusercontent.com/DavidKer1/restaurant-react-native-app/main/screenshots/create-order.png" alt="create order" width = "250" >
 
 ### Menu
-<img src="https://raw.githubusercontent.com/DavidKer1/restaurant-react-native-app/main/screenshots/menu.png" alt="menu" width = "250" >}
+<img src="https://raw.githubusercontent.com/DavidKer1/restaurant-react-native-app/main/screenshots/menu.png" alt="menu" width = "250" >
 
 ### Select and order
 <p>
